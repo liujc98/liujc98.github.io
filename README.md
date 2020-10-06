@@ -1,3 +1,4 @@
+theme: jekyll-theme-cayman
 # 刘家琛的个人主页
 ## 常用的访问链接
 [从零开始的生物信息学](https://zhuanlan.zhihu.com/c_1060579529482948608)
