@@ -84,9 +84,13 @@
     
 
 参考网站
-[1](https://blog.csdn.net/u013187057/article/details/83689020)
-[2](https://www.jianshu.com/p/91365f343585)
-[3](https://blog.csdn.net/qq_41500222/article/details/81129603)
-[4](https://blog.csdn.net/woai8339/article/details/82767356)
-[5](https://blog.csdn.net/qq_42303913/article/details/103645226)
+1[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
+
+2[Jupyter Notebook介绍、安装及使用教程](https://www.jianshu.com/p/91365f343585)
+
+3[Jupyter notebook 里面没有python3怎么办?](https://blog.csdn.net/qq_41500222/article/details/81129603)
+
+4[查看Jupyter-Python核](https://blog.csdn.net/woai8339/article/details/82767356)
+
+5[Fatal Python error](https://blog.csdn.net/qq_42303913/article/details/103645226)
     
