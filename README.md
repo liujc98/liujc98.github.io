@@ -82,8 +82,8 @@
     # 则
     set PYTHONIOENCODING=utf-8
     
-
 参考网站
+
 1[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
 
 2[Jupyter Notebook介绍、安装及使用教程](https://www.jianshu.com/p/91365f343585)
