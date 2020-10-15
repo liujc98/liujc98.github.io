@@ -1,5 +1,5 @@
 # 个人主页
-#### 更新这个主页也算是为了记录一些日常关键的信息
+更新这个主页也算是为了记录一些日常关键的信息
 ## 常用的访问链接 
 [从零开始的生物信息学](https://zhuanlan.zhihu.com/c_1060579529482948608)
 
@@ -16,8 +16,12 @@
 [Learn Python the hard way.3rd](http://shouce.jb51.net/python-way/learn-python-the-hard-way-appendix-a-Introduction.html)
 
 [鸟哥的linux私房菜 基础学习篇](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
-## 平时上课用到的代码，今后也会更新一些作业中用到的新代码并进行一些注解
-下面备注的是更新的时间
+# 平时上课用到的代码，今后也会更新一些作业中用到的新代码并进行一些注解
+下面备注的是发现问题的时间，更新时间可以在GitHub中找到
+## Linux
+下面是在linux中运行的代码，包括但不限于docker，shell等子应用
+从2020/9/21 开始学习linux
+下面是上课和自学中遇到的一些需要Mark的问题，留个备注以便之后查阅
 ### 用于从docker中copy文件到桌面（反之亦然）
 2020/9/25
     
@@ -49,12 +53,12 @@
     done
     exit 0
 
-## 平时写代码时应该注意的问题
+### 平时写代码时应该注意的问题
 2020/10/6 
     
     应该注意 `\t` 和 ` 反引号 `的使用
     
-## Jupyter notebook中只有Python 3
+### Jupyter notebook中只有Python 3
 2020/10/9
     
 从官网下载的anaconda3 中自带Jupyter notebook，但是里面只有Python3
@@ -82,17 +86,6 @@
     # 则
     set PYTHONIOENCODING=utf-8
     
-## 运行shell时使用sh命令报错
-2020/10/15
-
-    # Shell的调用文件命令分很多种，如
-    sh read.sh
-    bash read.sh
-    ./read.sh
-    # 上述的三种表述方法其实并不完全一致，经常性的会在第一种sh命令时报错
-    # 只需改用其余的两种方式就应该可以修正，说明linux在不同的版本之间个别的语句不相互兼容
-    # 更进一步的说，sh所调用的只是bash的一个子集
-
 参考网站
 
 1.[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
@@ -104,4 +97,41 @@
 4.[查看Jupyter-Python核](https://blog.csdn.net/woai8339/article/details/82767356)
 
 5.[Fatal Python error](https://blog.csdn.net/qq_42303913/article/details/103645226)
+    
+### 运行shell时使用sh命令报错
+2020/10/11
+
+    # Shell的调用文件命令分很多种，如
+    sh read.sh
+    bash read.sh
+    ./read.sh
+    # 上述的三种表述方法其实并不完全一致，经常性的会在第一种sh命令时报错
+    # 只需改用其余的两种方式就应该可以修正，说明linux在不同的版本之间个别的语句不相互兼容
+    # 更进一步的说，sh所调用的只是bash的一个子集
+    
+## R
+从2020/10/12开始看R，先从R_in_A开始看
+记录一下书里的关键代码，以及对代码的一些理解
+
+### 建立组合图像
+2020/10/15
+
+    attach(mtcars)
+    layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE))
+    hist(wt)
+    hist(mpg)
+    hist(disp)
+    detach(mtcars)
+    
+这是初看之下无法理解的代码思路，我认为简单地理解方式应该是
+建立了一个2X2矩阵 
+1 1
+2 3                 
+这个矩阵将要放着我们的图像，因此图像1放在了数字1的位置图像2/3同理
+于是就变成了图像1占据了窗口的上半部分，图像2/3分别在左下和右下
+    
+    
+    
+    
+    
     
