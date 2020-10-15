@@ -82,6 +82,17 @@
     # 则
     set PYTHONIOENCODING=utf-8
     
+## 运行shell时使用sh命令报错
+2020/10/15
+
+    # Shell的调用文件命令分很多种，如
+    sh read.sh
+    bash read.sh
+    ./read.sh
+    # 上述的三种表述方法其实并不完全一致，经常性的会在第一种sh命令时报错
+    # 只需改用其余的两种方式就应该可以修正，说明linux在不同的版本之间个别的语句不相互兼容
+    # 更进一步的说，sh所调用的只是bash的一个子集
+
 参考网站
 
 1.[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
