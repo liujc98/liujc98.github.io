@@ -114,7 +114,7 @@
 记录一下书里的关键代码，以及对代码的一些理解
 
 ### 建立组合图像
-2020/10/15
+2020/10/14
 
     attach(mtcars)
     layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE))
@@ -125,13 +125,61 @@
     
 这是初看之下无法理解的代码思路，我认为简单地理解方式应该是
 建立了一个2X2矩阵 
+
 1 1
-2 3                 
+2 3
+
 这个矩阵将要放着我们的图像，因此图像1放在了数字1的位置图像2/3同理
 于是就变成了图像1占据了窗口的上半部分，图像2/3分别在左下和右下
     
+### transform和with/within 
+2020/10/15
+
+    # 当我想要在原始的数据框中添加新的列向量时
+    # 创建数据框mydata，x1和x2是mydata的两个列向量
+    mydata <- data.frame(x1 = c(2, 2, 6, 4), x2 = c(3, 4, 2, 8))
+
+    # 利用transform函数对数据框mydata增加两个变量（列向量）sumx和meanx，并把结果存储在数据框mydata中
+    mydata <- transform(mydata, sumx = x1 + x2, meanx = (x1 + x2)/2)
+
+    # 利用within函数，expr表达式执行一条语句占一行，执行多条语句需要换行
+    mydata <- within(mydata, {sumx = x1 + x2
+                         meanx = (x1 + x2)/2})
+
+    # 或者多条语句在同一行，则中间应当用分号;隔开
+    mydata <- within(mydata, {sumx = x1 + x2; meanx = (x1 + x2)/2})
     
+参考网站
+
+[transform函数与with/within函数](https://zhuanlan.zhihu.com/p/25847796)
+
+### R语言的可视化——在直方图上添加密度曲线
+2020/10/16
+
+在做题的过程中遇到了这样的问题，参考了网上的很多代码找到了这个比较合适的，首先`set.seed(1234)`是为了保证每次产生的随机数一致
+在curve中按照如下的形式给出参数，可以看到curve的参数较为独特，可以直接根据`dnorm`绘制曲线，更为关键的是dnorm中的参数`x`
+仅是首次出现就可以执行代码的功能，目前还不够理解其中的原因，留待之后探究
+
+    set.seed(1234)
+    score <- rnorm(n = 1000, m = 80, sd = 20)
+    hist(score, freq=FALSE, xlab="Score", main="Distribution of score", 
+     col="lightgreen", xlim=c(0,150), ylim=c(0, 0.02))
+    curve(dnorm(x, mean=mean(score), sd=sd(score)), 
+      add=TRUE, col="darkblue", lwd=2)
+
+综合来说用于实现这个功能的代码数量很多，对于密度曲线的理解也因人而异，如果是只是要画本函数的对应密度函数，那么应该使用如下的代码
+借助`prob=T`和`density()`可以实现画图，需要注意的是这样画出来肯定不是一个正态分布曲线，更应该是一个弯曲的密度函数曲线
+另外`lines()`这个函数属于是“底层作图”，所以不需要`add = T`这样的语句
+
+    set.seed(123)
+    h<-rnorm(1000)
+    hist(h,prob=T,col="light blue")
+    lines(density(h), col="red", lwd=3)  
     
+ 画正态分布曲线的方法这里也再给出一种，借助`lines()`函数可以绘制正态曲线，但是需要在画图之前先建立一些间隔点   
     
+    cache<-seq(3.5, 6.5, length.out=100)
+    lines(cache, dnorm(cache, 5, 0.316), col="blue")
+      
     
     
