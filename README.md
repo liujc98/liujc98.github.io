@@ -176,7 +176,7 @@
     hist(h,prob=T,col="light blue")
     lines(density(h), col="red", lwd=3)  
     
- 画正态分布曲线的方法这里也再给出一种，借助`lines()`函数可以绘制正态曲线，但是需要在画图之前先建立一些间隔点   
+ 画正态分布曲线的方法这里也再给出一种，借助`lines()`函数可以绘制正态曲线，但是需要在画图之前先建立一些间隔点，并依据如下的参数进行构建
     
     cache<-seq(3.5, 6.5, length.out=100)
     lines(cache, dnorm(cache, 5, 0.316), col="blue")
