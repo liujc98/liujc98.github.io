@@ -214,7 +214,7 @@
 也是在知乎上看到了有关Python学习的一些方向性指导，这里附上一张图片，也供自己之后查看
 建立了一个新的Repo，我觉得这是我目前看到的十分便捷的用来存放图片的方法，也可以很好地插入图片到MD里面去
 
-![Ways to Python](https://github.com/liujc98/MyImages/blob/main/Ways%20to%20Python.jpg)
+![Ways to Python](https://github.com/liujc98/MyImages/raw/main/Ways%20to%20Python.jpg)
 
 图源[各个阶段Python的学习方法](https://www.zhihu.com/question/44337172/answer/202958210)
     
