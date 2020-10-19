@@ -16,6 +16,9 @@
 [Learn Python the hard way.3rd](http://shouce.jb51.net/python-way/learn-python-the-hard-way-appendix-a-Introduction.html)
 
 [鸟哥的linux私房菜 基础学习篇](http://cn.linux.vbird.org/linux_basic/linux_basic.php)
+
+[廖雪峰的Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+
 # 平时上课用到的代码，今后也会更新一些作业中用到的新代码并进行一些注解
 下面备注的是发现问题的时间，更新时间可以在GitHub中找到
 ## Linux
@@ -57,47 +60,7 @@
 2020/10/6 
     
     应该注意 `\t` 和 ` 反引号 `的使用
-    
-### Jupyter notebook中只有Python 3
-2020/10/9
-    
-从官网下载的anaconda3 中自带Jupyter notebook，但是里面只有Python3
-想要将Python2也安装进去，因为电脑中有Pymol，首先要注意安装的位置，不要安装在Pymol的同级文件夹中
-    
-    # 打开Anaconda Prompt，留意地址目录，输入
-    jupyter kernelspec list
-    
-得到结果
-
-    Available kernels:
-        python3    C:\123\share\jupyter\kernels\python3
-        python2    C:\ProgramData\jupyter\kernels\python2
         
-其中一个C:\123是我anaconda安装的路径，没有安装python2则不会显示第二个路径
-继续在Anaconda Prompt中操作
-
-    conda create --name python27 python=2.7 #安装python2环境
-    conda install ipykernel #安装python2内核
-    python -m ipykernel install #配置内核
-    # 再打开jupyter notebook即可
-    # 如果中途出现如下情况
-    Fatal Python error: init_sys_streams: can't initialize sys standard streams
-    LookupError: unknown encoding: 65001
-    # 则
-    set PYTHONIOENCODING=utf-8
-    
-参考网站
-
-1.[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
-
-2.[Jupyter Notebook介绍、安装及使用教程](https://www.jianshu.com/p/91365f343585)
-
-3.[Jupyter notebook 里面没有python3怎么办?](https://blog.csdn.net/qq_41500222/article/details/81129603)
-
-4.[查看Jupyter-Python核](https://blog.csdn.net/woai8339/article/details/82767356)
-
-5.[Fatal Python error](https://blog.csdn.net/qq_42303913/article/details/103645226)
-    
 ### 运行shell时使用sh命令报错
 2020/10/11
 
@@ -180,6 +143,58 @@
     
     cache<-seq(3.5, 6.5, length.out=100)
     lines(cache, dnorm(cache, 5, 0.316), col="blue")
-      
+
+## Python
+从2020/10/17开始正式自学Python，先从廖雪峰的Python课程开始
+记录一下书里的关键代码，以及对代码的一些理解
+
+### Jupyter notebook中只有Python 3
+2020/10/3
     
+从官网下载的anaconda3 中自带Jupyter notebook，但是里面只有Python3
+想要将Python2也安装进去，因为电脑中有Pymol，首先要注意安装的位置，不要安装在Pymol的同级文件夹中
+    
+    # 打开Anaconda Prompt，留意地址目录，输入
+    jupyter kernelspec list
+    
+得到结果
+
+    Available kernels:
+        python3    C:\123\share\jupyter\kernels\python3
+        python2    C:\ProgramData\jupyter\kernels\python2
+        
+其中一个C:\123是我anaconda安装的路径，没有安装python2则不会显示第二个路径
+继续在Anaconda Prompt中操作
+
+    conda create --name python27 python=2.7 #安装python2环境
+    conda install ipykernel #安装python2内核
+    python -m ipykernel install #配置内核
+    # 再打开jupyter notebook即可
+    # 如果中途出现如下情况
+    Fatal Python error: init_sys_streams: can't initialize sys standard streams
+    LookupError: unknown encoding: 65001
+    # 则
+    set PYTHONIOENCODING=utf-8
+    
+参考网站
+
+1.[anaconda 中启动jupyter notebook找不到python2 kernerl](https://blog.csdn.net/u013187057/article/details/83689020)
+
+2.[Jupyter Notebook介绍、安装及使用教程](https://www.jianshu.com/p/91365f343585)
+
+3.[Jupyter notebook 里面没有python3怎么办?](https://blog.csdn.net/qq_41500222/article/details/81129603)
+
+4.[查看Jupyter-Python核](https://blog.csdn.net/woai8339/article/details/82767356)
+
+5.[Fatal Python error](https://blog.csdn.net/qq_42303913/article/details/103645226)
+
+2020/10/16
+后记：这是很早就开始做出的更改，最开始的目的是为了匹配《Learn Python the Hard Way 3rd》中的教程所做的，
+但是很快随着平时的一些查阅资料发现，目前来说学习Python2并不是最好的选择，Python3才具备更为明显的时代特征和方向性，
+因此Python2只是作为一个安装的教程出现的，如果可以的话也留待之后进一步的学习
+
+### 关于Python学习的一些观点记录
+2020/10/19
+
+![Ways to Python](https://github.com/liujc98/MyImages/blob/main/Ways%20to%20Python.jpg)
     
